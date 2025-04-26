@@ -4,7 +4,7 @@
  **Naru White's Discord Rich Presence status bot**
 
 This bot shows the Rich Presence for Naru White in Discord.  
-It contains the links to his Carrd (all his social network links located there) and his Telegram channel. Also, the bot shows his pic in the left of the status text (you must have it ready).
+It contains the links to his Carrd (all his social network links located there). Also, the bot shows his pic in the left of the status text (you must have it ready).
 
 ---
 ## Requirements
@@ -20,11 +20,12 @@ It contains the links to his Carrd (all his social network links located there) 
 1. Download the code. You can use these commands in Terminal of your OS:   
  ```git clone https://github.com/NWAndrewIE/NWDiscordRPCBot```  
  ```cd NWDiscordRPCBot```
+or download it from a repository page (by ZIP).
 
-2. Install the depencities by this command:  
+3. Install the depencities by this command:  
  ```pip3 install -r requirements.txt```
 
-3. Create and setup the bot in the [Discord Developer Portal](https://discord.com/developers/applications):
+4. Create and setup the bot in the [Discord Developer Portal](https://discord.com/developers/applications):
 * Click **New Application**
 * Type your future bot's name (it will be showed in the status in the first string) and mark the "Agreement" square. Click **Create**
 * When in the bot's settings menu, go to **OAuth2** (on the left side) and copy the Client ID (not Client secret!). Paste in the **client_id** string in your **nw_richpresence.py**
@@ -40,7 +41,7 @@ small_image = "emote"
 
 ---
 ## Usage
-Running the code I described above means that the bot will work unless you stop it with Ctrl(Cmd)+C or Ctrl+Z (on GNU/Linux). To prevent this, you should use a "shadow run" of this code. It can be made depending on your OS:
+Running the code by the method I described above means that the bot will work unless you stop it with Ctrl(Cmd)+C or Ctrl+Z (on GNU/Linux). To prevent this, you should use a "shadow run" of this code. It can be made depending on your OS:
 
 ### For MS Windows:     
 To run: ```pythonw nw_richpresence.py```  
@@ -49,7 +50,7 @@ If **pythonw.exe** is absent in the processes, try **taskkill** with either **py
 
 ### For macOS or GNU/Linux:  
 To run: ```nohup python3 nw_richpresence.py ;```  
-To kill: use the **System Monitor** app or **pkill** command: `pkill python3`
+To kill: use the **System Monitor** app or **pkill** command: `pkill python3` (you can replace `python3` with another Python executables you executed this code if you have several versions of Python installed on your PC)
 
 ---
 ## Customizing the bot (visual)
@@ -83,4 +84,4 @@ where **Text** (in the "label") is the text which is showed on the button and **
 ## Conclusion & Copyrights
 I hope you like this experience :3  
 
-Copyright © 2021, 2024 Andrew B. Naru White is a trademark of Andrew B. and Hywello Studios, LLC. All rights reserved.
+Copyright © 2021, 2025 Andrew B. Naru White is a trademark of Andrew B. and Hywello Studios, LLC. All rights reserved.
