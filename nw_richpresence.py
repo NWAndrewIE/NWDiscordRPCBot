@@ -55,30 +55,13 @@ def update_rpc(RPC, state, details, large_image, small_image, large_text, small_
         end=current_time
     )
 
-# searching for config file and, if exists, copy to the app directory. But if not, creates a new default config file instead.
-
-programdir = os.path.dirname(os.path.abspath(__file__))
-sourcepath = os.path.join(programdir, configfile)
-
+# Check for config file (use setup_master.py to create/import it if missing).
 if not os.path.exists(os.path.join(app_dir, configfile)):
-    if os.path.exists(sourcepath):
-        if os.name == 'nt': copycmd = f'copy "{sourcepath}" "{app_dir}"'
-        else: copycmd = f'cp "{sourcepath}" "{app_dir}"'
-        result = os.system(copycmd)
-        if result != 0: 
-            logging.error("Error importing an existing config.cfg")
-            print("Error while importing a config file. Maybe you don't have privileges \non accessing either the directory the script located in or the Application Data folder")
-        else: logging.info(f"Found config.cfg and imported to {app_dir}")
-    else:
-        logging.info("No config file exists. Creating a new one instead...")
-        print("No config file in this system or nothing to import. \nTo import, place a preconfigured config.cfg file in the \ndirectory your script is located in and restart the script.")
-        print('Creating a new default config file instead...\nWhat is your bot\'s Client ID?\n(you must take it in Discord Developer Portal)')
-        newclientid = str(input('> '))
-        try:
-            with open(os.path.join(app_dir, configfile), "w") as f:
-                f.write('{\n"client_id": "', newclientid, '",\n"state": "Example state",\n"details": "Example details",\n"large_image": "examplelarge",\n"small_image": "examplesmall",\n"large_text": "example large text",\n"small_text": "example small text",\n"buttons": [\n{"label": "Test link", "url": "https://google.com"}\n]\n}')
-        except Exception as e: logging.error(f"Error creating a new default config: {e}")
-else: logging.info(f'Found config.cfg in {app_dir}')
+    logging.error("config.cfg not found. Run setup_master.py to create or import it.")
+    print("config.cfg not found. Run setup_master.py to create or import it.")
+    sys.exit(1)
+else:
+    logging.info(f'Found config.cfg in {app_dir}')
 
 def load_config():
     with open(os.path.join(app_dir, configfile), "r") as file: configData = json.load(file)
