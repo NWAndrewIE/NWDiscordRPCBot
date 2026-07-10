@@ -86,4 +86,4 @@ I hope you like this experience :3
 
 Copyright © 2021, 2025 Andrew B. Naru White is a trademark of Andrew B. and Hywello Studios, LLC. All rights reserved.
 
-This program is licensed by GNU GPL v3.0. The copy of this license is included in the repository.
+This program is licensed by MIT. The copy of this license is included in the repository.
